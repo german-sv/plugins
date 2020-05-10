@@ -124,7 +124,7 @@ public class Camera {
 
     // There's a specific order that mediaRecorder expects. Do not change the order
     // of these function calls.
-    if (enableAudio) mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+    if (enableAudio) mediaRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
     mediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
     mediaRecorder.setOutputFormat(recordingProfile.fileFormat);
     if (enableAudio) mediaRecorder.setAudioEncoder(recordingProfile.audioCodec);
@@ -137,6 +137,7 @@ public class Camera {
     mediaRecorder.setOrientationHint(getMediaOrientation());
     mediaRecorder.setAudioEncodingBitRate(recordingProfile.audioBitRate);
 
+    
     mediaRecorder.prepare();
   }
 
